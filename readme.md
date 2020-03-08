@@ -1,3 +1,5 @@
+[english is here](https://github.com/rmblankslash/GetInstagramThirdAccessToken/blob/master/readme_en.md)
+
 # 概要
 Instagram Graph APIで使用する無期限アクセストークン(第三アクセストークン)を取得するためのツールです。
 ついでにInstagram Business User IDも取得します。
