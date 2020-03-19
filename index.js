@@ -63,21 +63,3 @@ const instagram_graph_api_host = 'https://graph.facebook.com/';
     }
     console.log('END');
 })();
-
-/**
- * The generic function that request to internet resource.
- * Request method is 'GET'
- * @param {string} url 
- */
-async function getRequest(url) {
-    return new Promise((resolve,reject)=>{
-        request({ method: 'GET', url: url, encoding: null } , (error,response,body)=>{
-            if(error){
-                reject(error);
-            }
-            if(response){
-                resolve(response);
-            }
-        })
-    });
-}
