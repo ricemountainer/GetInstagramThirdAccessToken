@@ -1,6 +1,6 @@
 //const request = require('request');
 const axios = require('axios');
-const instagram_graph_api_host = 'https://graph.facebook.com/';
+const instagram_graph_api_host = 'https://graph.facebook.com/v6.0/';
 
 (async()=>{
     console.log('START');
@@ -28,6 +28,7 @@ const instagram_graph_api_host = 'https://graph.facebook.com/';
             }
         });
         let second_access_token = response1.data.access_token;
+        console.log('second_access_token:' + second_access_token);
 
         // get id
         let response2 = await axiosClient.get('me',{
@@ -36,6 +37,7 @@ const instagram_graph_api_host = 'https://graph.facebook.com/';
             }
         });
         let id = response2.data.id;
+        console.log('id:' + id);
 
         // get third_access_token
         let response3 = await axiosClient.get(id+'/accounts',{
@@ -46,6 +48,7 @@ const instagram_graph_api_host = 'https://graph.facebook.com/';
         let third_access_token = response3.data.data[0].access_token;
         // get instagram business user id
         // it needs first_access_token , third_access_token can't be used it.
+        console.log('third_access_token:' + third_access_token);
         let response4 = await axiosClient.get('me',{
             params: {
                 fields: 'accounts{instagram_business_account}',
